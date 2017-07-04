@@ -473,7 +473,7 @@
         
           
             <h1 id="head"><a href="#head" class="headerlink" title="head"></a>head</h1><h2 id="二级head"><a href="#二级head" class="headerlink" title="二级head"></a>二级head</h2><p>$\sum_i=0$</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">shell <span class="built_in">test</span></span></div><div class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></div><div class="line">echo test</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>shell test</div><div class="line"><span class="meta">#</span>!/bin/bash</div><div class="line">echo test</div></pre></td></tr></table></figure>
 <p><img src="C:\Users\VivianSnow\Desktop\新建文件夹 (2" alt="Screenshot_2017-05-03-14-42-30">\Screenshot_2017-05-03-14-42-30.png)</p>
 
           
@@ -537,7 +537,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/05/test/" itemprop="url">test</a></h1>
+                <a class="post-title-link" href="/2017/05/05/test/" itemprop="url">函数指针Snippents</a></h1>
         
 
         <div class="post-meta">
@@ -586,8 +586,14 @@
       
         
           
-            <p>#test</p>
-
+            <h1 id="函数指针Snippents"><a href="#函数指针Snippents" class="headerlink" title="函数指针Snippents"></a>函数指针Snippents</h1><p>与数组类似，除了能在函数中传入指向函数的指针，而且能够返回指向函数的指针。最典型的例子就是signal函数。原型如下:</p>
+<p>Linux 2.0之前版本，也是《APUE》中介绍的原型</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> (*signal (<span class="keyword">int</span> signo, <span class="keyword">void</span> (*func)(<span class="keyword">int</span>))) (<span class="keyword">int</span>);</div></pre></td></tr></table></figure>
+<p>Linux 2.6版本</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*<span class="keyword">__sighandler_t</span>)</span> <span class="params">(<span class="keyword">int</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">extern</span> sighandler_t <span class="title">signal</span> <span class="params">(<span class="keyword">int</span> sig, <span class="keyword">sighandler_t</span> handler)</span></span></div></pre></td></tr></table></figure>
+<p>C++11中还新出现了尾置返回类型的方式，可以参考《C++ primer》223页</p>
+<p>用法如下，可以看出比传统的方法会好理解一些，同时在C++11中的lambda，也需要用到尾置返回类型</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">auto f1(int) -&gt; int (*)(int *, int *)</div></pre></td></tr></table></figure>
           
         
       

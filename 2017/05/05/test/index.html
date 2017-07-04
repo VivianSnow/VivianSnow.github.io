@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="test," />
+  <meta name="keywords" content="C C++," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="#test">
-<meta name="keywords" content="test">
+<meta name="description" content="函数指针Snippents与数组类似，除了能在函数中传入指向函数的指针，而且能够返回指向函数的指针。最典型的例子就是signal函数。原型如下: Linux 2.0之前版本，也是《APUE》中介绍的原型 1void (*signal (int signo, void (*func)(int))) (int); Linux 2.6版本 12typedef void (*__sighandler_t)">
+<meta name="keywords" content="C C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
+<meta property="og:title" content="函数指针Snippents">
 <meta property="og:url" content="http://yoursite.com/2017/05/05/test/index.html">
 <meta property="og:site_name" content="VivianSnow&#39; Blog">
-<meta property="og:description" content="#test">
-<meta property="og:updated_time" content="2017-05-05T01:56:21.830Z">
+<meta property="og:description" content="函数指针Snippents与数组类似，除了能在函数中传入指向函数的指针，而且能够返回指向函数的指针。最典型的例子就是signal函数。原型如下: Linux 2.0之前版本，也是《APUE》中介绍的原型 1void (*signal (int signo, void (*func)(int))) (int); Linux 2.6版本 12typedef void (*__sighandler_t)">
+<meta property="og:updated_time" content="2017-07-04T01:39:33.091Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="#test">
+<meta name="twitter:title" content="函数指针Snippents">
+<meta name="twitter:description" content="函数指针Snippents与数组类似，除了能在函数中传入指向函数的指针，而且能够返回指向函数的指针。最典型的例子就是signal函数。原型如下: Linux 2.0之前版本，也是《APUE》中介绍的原型 1void (*signal (int signo, void (*func)(int))) (int); Linux 2.6版本 12typedef void (*__sighandler_t)">
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <title>test | VivianSnow' Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>函数指针Snippents | VivianSnow' Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">test</h1>
+          <h1 class="post-title" itemprop="name headline">函数指针Snippents</h1>
         
 
         <div class="post-meta">
@@ -337,8 +337,14 @@
       
 
       
-        <p>#test</p>
-
+        <h1 id="函数指针Snippents"><a href="#函数指针Snippents" class="headerlink" title="函数指针Snippents"></a>函数指针Snippents</h1><p>与数组类似，除了能在函数中传入指向函数的指针，而且能够返回指向函数的指针。最典型的例子就是signal函数。原型如下:</p>
+<p>Linux 2.0之前版本，也是《APUE》中介绍的原型</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> (*signal (<span class="keyword">int</span> signo, <span class="keyword">void</span> (*func)(<span class="keyword">int</span>))) (<span class="keyword">int</span>);</div></pre></td></tr></table></figure>
+<p>Linux 2.6版本</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*<span class="keyword">__sighandler_t</span>)</span> <span class="params">(<span class="keyword">int</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">extern</span> sighandler_t <span class="title">signal</span> <span class="params">(<span class="keyword">int</span> sig, <span class="keyword">sighandler_t</span> handler)</span></span></div></pre></td></tr></table></figure>
+<p>C++11中还新出现了尾置返回类型的方式，可以参考《C++ primer》223页</p>
+<p>用法如下，可以看出比传统的方法会好理解一些，同时在C++11中的lambda，也需要用到尾置返回类型</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">auto f1(int) -&gt; int (*)(int *, int *)</div></pre></td></tr></table></figure>
       
     </div>
 	
@@ -367,7 +373,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/test/" rel="tag"># test</a>
+            <a href="/tags/C-C/" rel="tag"># C C++</a>
           
         </div>
       
@@ -439,8 +445,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -513,6 +528,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数指针Snippents"><span class="nav-number">1.</span> <span class="nav-text">函数指针Snippents</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
